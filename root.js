@@ -1,6 +1,7 @@
 var fs = require('fs');
 var file ='./rootData.txt';
 var rootData =fs.readFileSync(file,'utf-8');
+var root = {};
 
 rootData = rootData.split('\n');
 var busData = {};
@@ -9,7 +10,7 @@ for(var i =0;i<rootData.length;i++){
 	busData[key.shift()] = key.shift().split(',');
 }
 
-var directBus = function(from,to){
+root.directBus = function(from,to){
 	var buses = [];
 	for(var bus in busData){
 		if(busData[bus].indexOf(from)>=0 && busData[bus].indexOf(to)>=0)
@@ -17,4 +18,5 @@ var directBus = function(from,to){
 	}
 	return buses;
 };
-console.log(directBus('JNR 5TH BLK','LALBHAG MAIN GATE'));
+
+module.exports = root;
