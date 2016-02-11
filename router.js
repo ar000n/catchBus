@@ -16,6 +16,7 @@ app.post('/findRoute',function(req,res){
 	var to = req.body.to;
 	var result = (route.directBus(from, to).length ==0) ? 
 	route.indirectBuses(from, to) : route.directBus(from, to);
+	// (result.length ==0) && res.send('No bus available..');
 	res.json(result);
 });
 

@@ -1,5 +1,4 @@
 var fs = require('fs');
-var ld = require('lodash');
 var routeFile ='./routeData.txt';
 var hubData = require('./busHubs.js');
 
@@ -27,11 +26,13 @@ route.indirectBuses = function(from,to){
 	var hubs = Object.keys(hubData);
 	var allPaths = [];
 	for(var i=0;i<hubs.length;i++){
-		var path = [];
+		var path = {};
 		var busesFrom = route.directBus(from,hubs[i]);
 		var busesTo = route.directBus(hubs[i],to);
 		if(busesFrom.length && busesTo.length){
-			path = ld.concat(busesFrom,hubs[i],busesTo);
+			path.catchAnyOf = busesFrom;
+			path.getDownAt = hubs[i];
+			path.thenCatchAnyOf = busesTo;
 			allPaths.push(path);
 		}
 	}
