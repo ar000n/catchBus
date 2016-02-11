@@ -16,8 +16,33 @@ font-size: 30px;
 
 #routes{
 	text-align: center;
+	font-size:25px;
 }
 
 #submit_from_to{
 	font-size: 29px;
 }
+#caution{
+	text-align: center;
+	margin-top: 70px;
+	font-size: 40px;
+}
+#indirect{
+	font-family: helvetica;
+	margin: 0 auto;
+	width:1100px;
+}
+tr,td{
+	font-size: 22px;
+	border:1px solid #dddddd;
+	font-weight: 200;
+}
+
+th{
+	border:1px solid #dddddd;
+	font-size: 25px;
+	font-weight: 400;
+	color: #222222;
+}
+
+/*KORAMANGALA_SWASTIK*/

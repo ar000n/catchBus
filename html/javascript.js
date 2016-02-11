@@ -3,10 +3,10 @@ var showBuses = function(){
 	var from = $('input[name=from]').val();
 	var to = $('input[name=to]').val();
 	$.post('findRoute', {from: from, to: to} , function(data){
-		// console.log(data);
-		(data.length == 0) && $('#routes').html('No bus  is available..');
-		if(data[0]== Array){
-			$('#routes').html(data);
+
+		(data.length == 0) && $('#caution').html('No bus  is available..');
+		if(typeof(data[0])=='string'){
+			$('#routes').html('catch any one of :- '+data.join('  '));
 		}
 		else{
 

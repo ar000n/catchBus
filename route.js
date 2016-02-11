@@ -30,9 +30,9 @@ route.indirectBuses = function(from,to){
 		var busesFrom = route.directBus(from,hubs[i]);
 		var busesTo = route.directBus(hubs[i],to);
 		if(busesFrom.length && busesTo.length){
-			path.catchAnyOf = busesFrom;
-			path.getDownAt = hubs[i];
-			path.thenCatchAnyOf = busesTo;
+			path.catch_any_of = busesFrom;
+			path.getdown_at = hubs[i];
+			path.then_catch_any_of = busesTo;
 			allPaths.push(path);
 		}
 	}
