@@ -1,6 +1,6 @@
 var http = require('http');
 var routers = require('./router.js');
-var IP_ADDRESS = process.env.OPENSHIFT_NODEJS_IP;
+var IP_ADDRESS = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 var PORT = process.env.OPENSHIFT_NODEJS_PORT ||  8080;
 var server = http.createServer(routers);
 // server.listen(3000,function(){console.log("listening at port===>"+3000)});
