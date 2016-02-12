@@ -6,7 +6,7 @@ var showBuses = function(){
 
 		(data.length == 0) && $('#caution').html('No bus  is available..');
 		if(typeof(data[0])=='string'){
-			$('#routes').html('catch any one of :- '+data.join('  '));
+			$('#routes').html('Catch any one of :- '+data.join('  '));
 		}
 		else{
 
