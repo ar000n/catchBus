@@ -1,14 +1,17 @@
 
 var showBuses = function(){
-	var from = $('input[name=from]').val();
-	var to = $('input[name=to]').val();
+	var from = $('select[name=from]').val();
+	var to = $('select[name=to]').val();
+
+	// $(#indirect).val("");
 	$.post('findRoute', {from: from, to: to} , function(data){
 
-		(data.length == 0) && $('#caution').html('No bus  is available..');
+		(data.length == 0) && $('#singleLine').html('No bus  is available..');
 		if(typeof(data[0])=='string'){
-			$('#routes').html('Catch any one of :- '+data.join('  '));
+			$('#singleLine').html('Catch any one of :- '+data.join('  '));
 		}
 		else{
+			// $('#singleLine').html("");
 
 		    var thead = d3.select("thead").selectAll("th")
 			.data(d3.keys(data[0]))

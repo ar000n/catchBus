@@ -1,6 +1,7 @@
 var fs = require('fs');
 var routeFile ='./routeData.txt';
 var hubData = require('./busHubs.js');
+var ld = require('lodash');
 
 var routeData =fs.readFileSync(routeFile,'utf-8');
 var route = {};
@@ -11,6 +12,8 @@ for(var i =0;i<routeData.length;i++){
 	var key = routeData[i].split(':');
 	busData[key.shift()] = key.shift().split(',');
 }
+
+
 route.directBus = function(from,to){
 	var buses = [];
 	for(var bus in busData){
