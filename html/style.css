@@ -18,19 +18,10 @@ h1{
 font-size: 30px;
 }
 
-/*#routes{
-	text-align: center;
-	font-size:32px;
-}*/
-
 #submit_from_to{
 	font-size: 29px;
 }
-/*#caution{
-	text-align: center;
-	margin-top: 70px;
-	font-size: 40px;
-}*/
+
 #indirect{
 	text-align: center;
 	font-size:32px;
@@ -54,4 +45,7 @@ th{
 .list{
 	font-size: 25px;
 }
-/
+h2{
+	text-align: center;
+	font-size: 40px;
+}

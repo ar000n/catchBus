@@ -3,7 +3,6 @@ var showBuses = function(){
 	var from = $('select[name=from]').val();
 	var to = $('select[name=to]').val();
 
-	// $(#indirect).val("");
 	$.post('findRoute', {from: from, to: to} , function(data){
 
 		(data.length == 0) && $('#singleLine').html('No bus  is available..');
@@ -11,7 +10,6 @@ var showBuses = function(){
 			$('#singleLine').html('Catch any one of :- '+data.join('  '));
 		}
 		else{
-			// $('#singleLine').html("");
 
 		    var thead = d3.select("thead").selectAll("th")
 			.data(d3.keys(data[0]))
@@ -28,5 +26,9 @@ var showBuses = function(){
 
 
 $(document).ready(function(){
-	$('#submit_from_to').click(showBuses);
+	$('#submit_from_to').on('click', function(){
+		$('table').html('<thead></thead><tbody></tbody>');
+		$('#singleLine').empty();
+		showBuses();
+	});
 });
