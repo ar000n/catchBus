@@ -11,8 +11,10 @@
 <body>
 	<h1>CATCH YOUR BUS</h1>
 	<div id = "where">
-		<select name="from" class="list" ></select>
-		<select name="to" class="list"></select>
+		<input list="fromStops" name="from">
+		<datalist id="fromStops" ></datalist>
+		<input list="toStops" name="to">
+		<datalist id="toStops"></datalist>
 		<button id="submit_from_to">GO!</button>
 	</div>
 	<h2 id="singleLine"></h2>

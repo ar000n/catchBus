@@ -1,8 +1,7 @@
 
 var showBuses = function(){
-	var from = $('select[name=from]').val();
-	var to = $('select[name=to]').val();
-
+	var from = $('input[name=from]').val();
+	var to = $('input[name=to]').val();
 	$.post('findRoute', {from: from, to: to} , function(data){
 
 		(data.length == 0) && $('#singleLine').html('No bus  is available..');

@@ -160,11 +160,11 @@ var stops =[ 'A NARAYANAPURA', 'ABBIGERE', 'ADDA VISHWANATHAPURA', 'ADIGONDANAHA
 
 var createSelectTag = function(stops){
 	var result = stops.map(function(stop){
-		return '<option>'+stop+'</option>';
+		return '<option value = "'+stop+'">';
 	});
 	return result.join('');
 };
 window.onload = function(){
-	$('.list').append(createSelectTag(stops));
-
+	$('#fromStops').append(createSelectTag(stops));
+	$('#toStops').append(createSelectTag(stops));
 }
